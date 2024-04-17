@@ -32,19 +32,23 @@ nav{
   }// end anchors
 }//end nav
 
+header {
+    justify-content:left;
+}  
 
-  #properties {
+#properties {
   display: grid;
   grid-template-columns: 1fr 1fr;
   section{
-  grid-template-areas:
-  "name"
-  "photo"
-  "address"
-  "phone";
+    grid-template-areas:
+    "name"
+    "photo"
+    "address"
+    "phone";
   }
   img {
     height: 250px;
+    width: 100%;
   }
 } // end properties parent
 

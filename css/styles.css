@@ -657,6 +657,9 @@ footer p {
     border: none;
     padding: 0.6rem 1.5rem;
   }
+  header {
+    justify-content: left;
+  }
   #properties {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -666,6 +669,7 @@ footer p {
   }
   #properties img {
     height: 250px;
+    width: 100%;
   }
   .large-1 {
     flex-basis: 8.3333333333%;
