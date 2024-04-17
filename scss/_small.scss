@@ -1,0 +1,214 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  color: $fontColor;
+}
+#pageWrapper{
+  position: relative;
+  overflow-x: hidden;
+}
+.moveOver>.content{transform:translateX(-180px);}
+.content{transition: transform 600ms ease;}
+
+#headerWrapper {
+  color: $secondaryColor;
+}
+
+#hamburgerButton {
+  display: none;
+  &.open {
+    display: block;
+  }
+}
+
+#closeButton {
+  display: block;
+  &.open {
+    display: none;
+  }
+}
+#titleWrapper {
+  height: 100%;
+  width: 500px;
+  margin-top: 0;
+}
+
+
+#phone{
+  display:none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 2vw;
+  
+
+  h2{
+    color: rgb(34, 34, 34);
+    font-style: italic ;
+    font-weight: 100;
+  }
+  h1 {
+    color: $primaryColor;
+  }
+  button{
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    align-self: start;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    text-align: right;
+    color: #444;
+  } //end button
+}
+
+/*Navigation stuff goes here*/
+
+nav{
+  background: rgb(253, 215, 109);
+  width: 180px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom:0;
+  transform: translateX(100%);
+  div{
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #666;
+    color: #fff;
+  }//end div
+  ul {
+    list-style: none;
+  }
+  ul li a{
+    display: block;
+    padding: .9rem .5rem;
+    text-align: right;
+    border-bottom: 1px rgba(0,0,0,0.25) solid;
+    text-decoration:  none;
+    color: black;
+  }// end anchors
+  ul li a:hover{
+    background-color: $secondaryColor;
+
+  }// end hover
+  li.active a{
+    color:$primaryColor;
+  }
+
+} //end nav
+
+#properties {
+section{
+  border-radius: 5px;
+display: grid;
+background-color: rgb(16, 54, 90);
+margin: 5px;
+color: $secondaryColor;
+grid-template-areas:
+"name"
+"photo"
+"address"
+"phone";
+}
+img{
+  grid-area: photo;
+  width: 100%;
+  height: auto;
+}
+h2{
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0 16px;
+  grid-area: name;
+  font-weight: 500;
+  font-size: 45px;
+}
+p{
+  padding-left: 16px;
+  grid-area: address;
+  font-weight: 200;
+}
+a{
+  margin: 16px;
+  border-radius: 8px;
+  background-color: rgb(253, 215, 109);
+  grid-area: phone;
+  text-align: center;
+  height: 50px;
+  padding: 16px;
+  color: black;
+}
+} // end properties parent
+
+
+
+//styling the rows
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 0 8px;
+}
+
+
+//styling the columns
+.column{
+  padding: 0 8px;
+  margin: 8px 0;
+}
+
+// create the for loop
+@for $i from 1 through 12{
+$w: calc($i /12) *100%;
+.small-#{$i} {flex-basis: $w}
+}
+
+.round, .fill, .shadow{padding: 8px 8px;}
+.round{border-radius: 9px;}
+.fill{background-color: #ffaeeb;}
+.shadow{box-shadow: 0 0 10px #c0c0c0;}
+.left{justify-content: left;}
+.center{
+  margin: auto;
+  align-items: center;
+}
+
+// begin the footer
+
+#footerWrapper {
+    background-color: $menuColor;
+    color:rgb(255, 255, 255);
+}
+footer {
+    padding: 0.5rem $gutter;
+    p{
+        margin: 0;
+        font-weight: $lightWeight;
+        text-align: center;
+    }
+}

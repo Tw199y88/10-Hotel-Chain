@@ -1,0 +1,58 @@
+header, nav, main, footer{
+    max-width: 60rem;
+    margin: auto;
+}
+
+/*Navigation stuff goes here*/
+#hamburgerButton {
+    display: none;
+    &.open {
+      display: none;
+    }
+  }
+  
+#closeButton {
+    display: none;
+    &.open {
+        display: none;
+    }
+}
+nav{
+    position:static;
+    transform: translateX(0);
+    width: auto;
+    div {display:none;}
+    ul{
+        display:flex;
+        margin-left: 2%;
+    }
+    ul li a{
+        border: none;
+        padding: .6rem 1.5rem;
+  }// end anchors
+}//end nav
+
+
+  #properties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  section{
+  grid-template-areas:
+  "name"
+  "photo"
+  "address"
+  "phone";
+  }
+  img {
+    height: 250px;
+  }
+} // end properties parent
+
+
+
+// create the for loop
+@for $i from 1 through 12{
+    $w: calc($i /12) *100%;
+    .large-#{$i} {flex-basis: $w}
+    }
+    
