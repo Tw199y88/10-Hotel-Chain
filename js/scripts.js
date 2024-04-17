@@ -48,17 +48,3 @@ mySection.appendChild(theAddress)
 mySection.appendChild(theTelephone)
 cards.appendChild(mySection)
 })
-
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    loop: true,
-    effect:'slide',
-    speed:1500,
-    autoplay: {
-        delay: 3000,
-    },
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  });
